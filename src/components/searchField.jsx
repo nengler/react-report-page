@@ -43,6 +43,7 @@ class searchField extends Component {
               <tr>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Last Updated</th>
                 <th>Count</th>
               </tr>
             </thead>
