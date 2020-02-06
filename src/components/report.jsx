@@ -1,0 +1,36 @@
+import React, { Component } from "react";
+import Category from "./category";
+import SearchField from "./searchField";
+import { reportDataFetch } from "../redux/actions/reportPage";
+import { connect } from "react-redux";
+
+class report extends Component {
+  state = {};
+
+  componentDidMount() {
+    this.props.reportDataFetch().then(() => {
+      console.log("worked maybe");
+      console.log(this.props.categoryInfo);
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <SearchField />
+        <Category />
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  categoryInfo: state.reportState.reportData
+});
+
+const mapDispatchToProps = dispatch => ({
+  reportDataFetch: () => dispatch(reportDataFetch())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(report);
+//export default ;

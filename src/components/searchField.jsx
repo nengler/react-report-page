@@ -34,7 +34,6 @@ class searchField extends Component {
   };
 
   ItemList = () => {
-    console.log(this.state.items.length);
     if (this.state.items.length > 0) {
       return (
         <div className="table_holder">
