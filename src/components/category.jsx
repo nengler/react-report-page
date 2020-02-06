@@ -17,8 +17,8 @@ class category extends Component {
     if (this.props.categoryInfo == null) {
       return null;
     } else {
-      let ii = Object.keys(this.props.categoryInfo);
-      return ii.map(key => (
+      let categoryKeys = Object.keys(this.props.categoryInfo);
+      return categoryKeys.map(key => (
         <Header key={key} name={key} header={this.props.categoryInfo[key]} />
       ));
     }
